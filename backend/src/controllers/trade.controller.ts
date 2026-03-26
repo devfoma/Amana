@@ -235,7 +235,6 @@ export class TradeController {
         .json({ error: "Failed to build deposit transaction" });
     }
   };
-
   private isValidPublicKey(value: unknown): value is string {
     return (
       typeof value === "string" &&

@@ -26,7 +26,6 @@ export interface BuildCreateTradeTxResult {
 export interface BuildDepositTxResult {
   unsignedXdr: string;
 }
-
 /** Vitest-only hook to avoid live Soroban RPC in unit tests. */
 export function __setRpcServerFactoryForTests(factory: RpcServerFactory): void {
   serverFactory = factory;
@@ -244,7 +243,6 @@ export class ContractService {
       unsignedXdr: preparedTransaction.toXDR(),
     };
   }
-
   private toContractAmount(amountUsdc: string): bigint {
     const [wholePart, fractionPart = ""] = amountUsdc.split(".");
     const paddedFraction = `${fractionPart}0000000`.slice(
